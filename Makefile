@@ -42,7 +42,7 @@ norminette:
 	norminette -R CheckForbiddenSourceHeader $(SRC) $(SRC_BONUS)
 
 clean: 
-	rm -f $(OBJECTS)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
@@ -51,4 +51,4 @@ re: fclean $(NAME)
 
 
 
-.PHONY: norminette all clean fclean re bonus
+.PHONY: all norminette clean fclean re bonus
