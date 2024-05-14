@@ -1,0 +1,48 @@
+NAME = libft.a
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror 
+
+SRC = sample1.c sample2.c
+# OBJECTS = sample1.o sample2.o >>> Following one lists out all the file names with .o instead of .c
+OBJ = $(SRC:.c=.o)
+
+SRC_BONUS = bonus1.c bonus2.c
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
+# Builds everything
+all: $(NAME) 
+
+
+
+
+%.o : %.c
+	# -c means compile source files, but do not link
+	# $@ : TARGET
+	# $^ : PRE-REQUISITES
+	$(CC) $(CFLAGS) -c -o $@ $^
+
+
+
+norminette: 
+	@echo ">>> Checking norminette for all files"
+	norminette -R CheckForbiddenSourceHeader $(SRC) $(SRC_BONUS)
+
+
+
+
+clean: 
+	rm -f $(OBJECTS)
+
+# Removes all object files, then remove lib file libft.a
+fclean: clean
+	rm -f $(NAME)
+
+# Rebuild: 1) Delete all ".o" files and lib file; 2) Start fresh compilation
+re: fclean $(NAME)
+
+# TODO: Define Bonus MAKE commands
+bonus: 
+
+# List all targets as actions that can be performed by make to avoid unexpected behaviour
+.PHONY: all clean fclean re bonus

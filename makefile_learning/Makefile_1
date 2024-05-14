@@ -1,0 +1,39 @@
+# NAME
+
+# all - compile the entire program
+all: myapp 
+
+# C compiler choices
+@echo ">>> Specifying C compiler:"
+CC = gcc
+
+# Compilation Flags
+CFLAGS = -Wall -Wextra -Werror -std=c99
+
+# Trying compilation
+list.o : list.h list.c // (TARGET): (PRE-REQUISITES)
+ 	$(CC) $(CFLAGS) -c list.c (COMMAND)
+
+# Trying compilation with automatic variables
+myapp: list.o tree.o main.c
+# 		$(CC) $(CFLAGS) -o myapp main.c list.c tree.o
+# 		$(CC) $(CFLAGS) -o TARGET main.c list.c tree.o
+# 		$(CC) $(CFLAGS) -o $@ main.c list.c tree.o
+# 		$(CC) $(CFLAGS) -o TARGET DEPENDENCIES 
+ 		$(CC) $(CFLAGS) -o $@ $^ 
+
+# Another way to do this
+# (TARGET): (PRE-REQUISITE)
+# %.o MEANS any files ending in .o
+ 	%.o : %.c %.h (*.o FILES REQUIRE *.c AND *.h FILES)
+	$(CC) : $(CFLAGS) -c $^
+
+# clean 
+clean:
+	@echo ">>>> Removing all output files:"
+#	rm *.o myapp
+	rm *.o
+
+# fclean
+
+# re
