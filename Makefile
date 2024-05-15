@@ -6,7 +6,7 @@
 #    By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 23:50:01 by hshi-yun          #+#    #+#              #
-#    Updated: 2024/05/14 23:50:05 by hshi-yun         ###   ########.fr        #
+#    Updated: 2024/05/15 12:41:17 by shiyun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror 
 
-SRC = sample1.c sample2.c
+SRC = ft_putchar_fd.c 
 OBJ = $(SRC:.c=.o)
 
 SRC_BONUS = bonus1.c bonus2.c
@@ -32,13 +32,13 @@ all: $(NAME)
 $(NAME) : $(OBJ)
 	@echo ">>> Starting background processing and indexing of files into lib"
 	ar rcs $(NAME) $(OBJ)
-	randlib $(NAME)
+	ranlib $(NAME)
 	@echo ">>> Processing and indexing completed."
  
 bonus : $(OBJ_BONUS)
 	@echo ">>> Starting background processing and indexing of files into bonus lib"
 	ar rcs $(NAME) $(OBJ_BONUS)
-	randlib $(NAME)
+	ranlib $(NAME)
 	@echo ">>> Processing and indexing completed."
  
 
