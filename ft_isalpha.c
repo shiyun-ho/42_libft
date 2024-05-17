@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 12:13:55 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/17 10:45:48 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/05/17 11:54:15 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/05/17 14:16:38 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-/*
-* @param: c - char to output
-* @param: fd - file descriptor
-* description: Outputs character to given file descriptor
-*/
-
-void	ft_putchar_fd(char c, int fd)
+int	ft_isalpha(unsigned char c)
 {
-	write(fd, &c, 1);
+	if ((c >= 'a' && c <= 'z') | (c >= 'A' | c <= 'Z'))
+		return 1;
+	
+	return 0;
 }

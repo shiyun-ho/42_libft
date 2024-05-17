@@ -6,7 +6,7 @@
 #    By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 23:50:01 by hshi-yun          #+#    #+#              #
-#    Updated: 2024/05/15 12:41:17 by shiyun           ###   ########.fr        #
+#    Updated: 2024/05/17 14:35:23 by shiyun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ NAME = libft.a
 
 
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror 
+CC =gcc
+CFLAGS =-Wall -Wextra -Werror
 
-SRC = ft_putchar_fd.c 
+SRC = ft_putchar_fd.c
 OBJ = $(SRC:.c=.o)
 
-SRC_BONUS = bonus1.c bonus2.c
+SRC_BONUS = 1.c 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 
