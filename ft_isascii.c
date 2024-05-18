@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
+/*   By: hshi-yun <hshi-yun@student.42singapor      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 11:54:15 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/18 12:42:11 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/05/18 16:03:46 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/05/18 16:11:30 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(unsigned char c)
+int isascii(int c)
 {
-	if (c >= 'a' && c <= 'z')
-	{	
-		return (1);
+	if (c >= 0 && c <= 127)
+	{
+		return 1;
 	}
-	else if (c >= 'A' && c <= 'Z')
-	{	
-		return (1);
-	}
-	return (0);
+	return 0;
 }
