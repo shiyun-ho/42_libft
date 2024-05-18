@@ -6,11 +6,11 @@
 /*   By: hshi-yun <hshi-yun@student.42singapor      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:03:46 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/18 16:11:30 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/05/18 16:31:14 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int isascii(int c)
+int ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 	{

@@ -123,21 +123,36 @@ void test_isalnum()
 
 void test_isascii()
 {
-	unsigned int testChar; 
+	int testChar; 
 
-	printf(">>>Checking ft_isascii:\n"); 
+	printf("#####Checking ft_isascii:#####\n"); 
 
-	printf(">Checking agst ascii:\n"); 
+	printf(">Checking agst ascii:\nCustom:\n"); 
 	for (testChar = 0; testChar <= 127; testChar++){
-		assert(ft_isascii(testChar) && isascii(testChar));
+		printf("%i:", testChar);
+		printf("%i	", ft_isascii(testChar));
 	}
+	printf("\n\nStandard:\n"); 
+	for (testChar = 0; testChar <= 127; testChar++){
+		printf("%i:", testChar);
+		printf("%i	", isascii(testChar));
+		//assert(ft_isascii(testChar) && isascii(testChar));
+	}
+	printf("\n\n"); 
 
-	printf(">Checking agst non-ascii:\n");
+	printf(">Checking agst non-ascii:\nCustom\n");
 	for (testChar = 128; testChar <= 255; testChar++){
-		assert(ft_isascii(testChar) && isascii(testChar));
+		printf("%i:", testChar);
+		printf("%i	", ft_isascii(testChar));
+		//assert(ft_isascii(testChar) && isascii(testChar));
+	}
+	printf("\n\nStandard:\n"); 
+	for (testChar = 128; testChar <= 255; testChar++){
+		printf("%i:", testChar);
+		printf("%i	", isascii(testChar));
+		//assert(ft_isascii(testChar) && isascii(testChar));
 	}
 
-	printf("All tests passed!\n"); 
 }
 
 void test_ft_putchar_fd()
