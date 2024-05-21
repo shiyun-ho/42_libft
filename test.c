@@ -2,7 +2,7 @@
 #include "libft.h"
 #include <assert.h>
 #include <ctype.h>
-
+#include <string.h>
 
 void test_ft_isalpha()
 {
@@ -155,6 +155,57 @@ void test_isascii()
 
 }
 
+void test_isprint()
+{
+	unsigned int testChar;
+
+	printf("###Checking ft_isprint:###\n");
+	
+	printf(">Checking agst printable char:\nCustom:\n"); 
+	for (testChar = 33; testChar <= 126; testChar++){
+		printf("%i:", testChar);
+		printf("%i	", ft_isprint(testChar));
+	}
+	printf("\n\nStandard:\n"); 
+	for (testChar = 33; testChar <= 126; testChar++){
+		printf("%i:", testChar);
+		printf("%i	", isprint(testChar));
+	}
+	printf("\n\n"); 
+
+	printf(">Checking agst non-printable char:\nCustom\n");
+	for (testChar = 0; testChar <= 32; testChar++){
+		printf("%i:", testChar);
+		printf("%i	", ft_isprint(testChar));
+	}
+	printf("\n\nStandard:\n"); 
+	for (testChar = 0; testChar <= 32; testChar++){
+		printf("%i:", testChar);
+		printf("%i	", isprint(testChar));
+	}
+
+}
+
+void test_strlen()
+{
+	printf("### Starting test of ft_strlen ###\n");
+	char str[50] = "Hello World! ";
+
+	printf(">>> Testing |%s|\n\n", str);
+	printf("Length of string str(ft_strlen) = %zu \n", ft_strlen(str));
+	printf("Length of string str(strlen) = %zu \n\n\n", strlen(str));
+
+	char str1[50] = "";
+	printf(">>> Testing |%s|\n\n", str1);
+	printf("Length of string str1(ft_strlen) = %zu \n", ft_strlen(str1));
+	printf("Length of string str1(strlen) = %zu \n\n\n", strlen(str1));
+
+	char *str2 = NULL;
+	printf(">>> Testing |%s|\n\n", str2);
+	printf("Length of string str2(ft_strlen) = %zu \n", ft_strlen(str2));
+	printf("Length of string str2(strlen) = %zu \n\n\n", strlen(str2));
+}
+
 void test_ft_putchar_fd()
 {
 	printf(">>> Checking ft_putchar_fd:\n");
@@ -179,7 +230,10 @@ int main(void)
 	//test_ft_isalpha();
 	//test_is_digit();
 	//test_isalnum();
-	test_isascii(); 
+	//test_isascii(); 
+	//test_isprint();
+	//test_strlen();
+
 
 	//test_ft_putchar_fd();
 	

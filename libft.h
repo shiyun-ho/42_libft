@@ -6,7 +6,7 @@
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:17:03 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/18 16:23:33 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:50:42 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_isalpha(unsigned char c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
 int ft_isascii(int c);
+int ft_isprint(int c);
+size_t ft_strlen(const char *s);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

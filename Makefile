@@ -6,7 +6,7 @@
 #    By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 23:50:01 by hshi-yun          #+#    #+#              #
-#    Updated: 2024/05/18 16:03:39 by hshi-yun         ###   ########.fr        #
+#    Updated: 2024/05/21 14:51:07 by hshi-yun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ NAME = libft.a
 CC =gcc
 CFLAGS =-Wall -Wextra -Werror
 
-SRC = ft_putchar_fd.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c
+SRC = ft_putchar_fd.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+	  ft_isprint.c ft_strlen.c
 OBJ = $(SRC:.c=.o)
 
 SRC_BONUS = 1.c 
