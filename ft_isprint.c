@@ -6,15 +6,15 @@
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:21:07 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/21 14:46:52 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/22 18:10:20 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= ' ' && c <= '~')
 	{
-		return 1;
+		return (1);
 	}
-	return 0;
+	return (0);
 }

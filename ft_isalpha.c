@@ -6,18 +6,18 @@
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 11:54:15 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/18 12:42:11 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:07:25 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(unsigned char c)
 {
 	if (c >= 'a' && c <= 'z')
-	{	
+	{
 		return (1);
 	}
 	else if (c >= 'A' && c <= 'Z')
-	{	
+	{
 		return (1);
 	}
 	return (0);

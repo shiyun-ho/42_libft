@@ -6,7 +6,7 @@
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:49:38 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/21 15:43:31 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/22 18:10:58 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 * 		 Excludes terminating '\0'
 * @returns: number of bytes in string pointed by s
 */
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	int i; 
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }

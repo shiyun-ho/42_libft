@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshi-yun <hshi-yun@student.42singapor      +#+  +:+       +#+        */
+/*   By: shiyun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 16:03:46 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/22 18:09:47 by shiyun           ###   ########.fr       */
+/*   Created: 2024/05/22 18:58:31 by shiyun            #+#    #+#             */
+/*   Updated: 2024/05/22 19:51:11 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+/*
+* desc: Converts lowercase to uppercase
+* if c == lowercase, return uppercase equivalent 
+* if c is not unsigned char OR EOF, behavior == UNDEFINED
+* @params: 
+*/
+int ft_isupper(int c)
 {
-	if (c >= 0 && c <= 127)
+	if (c >= 'a' && c <= 'z')
 	{
-		return (1);
+		return (c - 20);
 	}
-	return (0);
+	return (c); 
 }

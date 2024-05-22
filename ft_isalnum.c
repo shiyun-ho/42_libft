@@ -6,7 +6,7 @@
 /*   By: hshi-yun <hshi-yun@student.42singapor      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:32:23 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/18 15:13:54 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:09:05 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isalnum(int c)
 {
-	if(ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
-	{	
-		return 1;
+	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+	{
+		return (1);
 	}
-	return 0;
+	return (0);
 }

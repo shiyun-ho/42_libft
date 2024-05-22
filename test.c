@@ -225,6 +225,150 @@ void test_ft_putchar_fd()
 	}
 }
 
+void test_strlcpy() {
+  char src[] = "Hello, world!";
+  char dest1[50], dest2[50];
+
+  printf("### Starting test of ft_strlcpy: ###\n\n");
+
+  // Test 1: Enough space
+  printf(">> Test when there is sufficient space: \n");
+  size_t size = sizeof(dest1) - 1;
+  memset(dest1, 0, size + 1); // Ensure null termination
+  memset(dest2, 0, size + 1);
+
+  size_t ret1 = strlcpy(dest1, src, size);
+  size_t ret2 = ft_strlcpy(dest2, src, size);
+
+  printf("strlcpy: |%s|\n", dest1);
+  printf("ft_strlcpy: |%s|\n", dest2);
+  assert(ret1 == ret2);
+  assert(strcmp(dest1, dest2) == 0);
+  printf("Test 1 (Enough space): PASSED\n\n");
+
+  // Test 2: Small destination when dest buffer < src string
+  printf(">> Test when there dest buffer is SMALLER than src str: \n");
+  size = 10;
+  memset(dest1, 0, size + 1);
+  memset(dest2, 0, size + 1);
+
+  ret1 = strlcpy(dest1, src, size);
+  ret2 = ft_strlcpy(dest2, src, size);
+
+  printf("strlcpy: |%s|\n", dest1);
+  printf("ft_strlcpy: |%s|\n", dest2);
+  assert(ret1 == ret2);
+  assert(strcmp(dest1, dest2) == 0);
+  printf("Test 2 (Small destination): PASSED\n\n");
+
+  // Test 3: Empty source
+  printf(">> Test when src str is EMPTY: \n");
+  size = sizeof(dest1) - 1;
+  src[0] = '\0'; // Empty source string
+  memset(dest1, 0, size + 1);
+  memset(dest2, 0, size + 1);
+
+  ret1 = strlcpy(dest1, src, size);
+  ret2 = ft_strlcpy(dest2, src, size);
+
+  printf("strlcpy: |%s|\n", dest1);
+  printf("ft_strlcpy: |%s|\n", dest2);
+  assert(ret1 == ret2);
+  assert(strcmp(dest1, dest2) == 0);
+  printf("Test 3 (Empty source): PASSED\n\n");
+
+  // Test 4: Zero size
+  printf(">> Test when size is ZERO: \n");
+  size = 0;
+  memset(dest1, 0, size + 1);
+  memset(dest2, 0, size + 1);
+
+  ret1 = strlcpy(dest1, src, size);
+  ret2 = ft_strlcpy(dest2, src, size);
+
+  printf("strlcpy: |%s|\n", dest1);
+  printf("ft_strlcpy: |%s|\n", dest2);
+  assert(ret1 == ret2);
+  assert(dest1[0] == dest2[0]); // Both should be null terminated
+  printf("Test 4 (Zero size): PASSED\n\n\n");
+
+  printf("~~~~ ( o - o ) V ----ALL TESTS PASSED!~~~~~\n");
+}
+
+void test_strncmp()
+{
+	printf("### Starting test of ft_strncmp: ###\n\n");
+
+// Test 1: Equal strings
+  printf("Test 1: Equal strings\n");
+  char *s1 = "hello";
+  char *s2 = "hello";
+  int result_ft = ft_strncmp(s1, s2, 5);
+  int result_std = strncmp(s1, s2, 5);
+  printf("s1 = |%s|\n", s1); 
+  printf("s2 = |%s|\n", s2);
+  printf("n (comparison) = %i\n\n", 5);
+
+  assert(result_ft == result_std);
+  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+  // Test 2: Different strings (s1 < s2)
+  printf("\nTest 2: Different strings (s1 < s2)\n");
+  s1 = "apple";
+  s2 = "banana";
+  result_ft = ft_strncmp(s1, s2, 5);
+  result_std = strncmp(s1, s2, 5);
+  printf("s1 = |%s|\n", s1); 
+  printf("s2 = |%s|\n", s2);
+  printf("n (comparison) = %i\n\n", 5);
+
+  assert(result_ft == result_std);
+  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+  // Test 3: Different strings (s1 > s2)
+  printf("\nTest 3: Different strings (s1 > s2)\n");
+  s1 = "world";
+  s2 = "hello";
+  result_ft = ft_strncmp(s1, s2, 5);
+  result_std = strncmp(s1, s2, 5);
+  printf("s1 = |%s|\n", s1); 
+  printf("s2 = |%s|\n", s2);
+  printf("n (comparison) = %i\n\n", 5);
+
+  assert(result_ft == result_std);
+  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+  // Test 4: Empty string
+  printf("\nTest 4: Empty string\n");
+  s1 = "";
+  s2 = "hello";
+  result_ft = ft_strncmp(s1, s2, 5);
+  result_std = strncmp(s1, s2, 5);
+  printf("s1 = |%s|\n", s1); 
+  printf("s2 = |%s|\n", s2);
+  printf("n (comparison) = %i\n\n", 5);
+
+  assert(result_ft == result_std);
+  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+  // Test 6: Short comparison length
+  printf("\nTest 5: Short comparison length\n");
+  s1 = "hello world";
+  s2 = "hello";
+  result_ft = ft_strncmp(s1, s2, 3);
+  result_std = strncmp(s1, s2, 3);
+  printf("s1 = |%s|\n", s1); 
+  printf("s2 = |%s|\n", s2);
+  printf("n (comparison) = %i\n\n", 3);
+
+  assert(result_ft == result_std);
+  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+  printf("~~~~ ( o - o ) V ----ALL TESTS PASSED!~~~~~\n");
+}
+
+
+
 int main(void)
 {
 	//test_ft_isalpha();
@@ -233,7 +377,8 @@ int main(void)
 	//test_isascii(); 
 	//test_isprint();
 	//test_strlen();
-
+	//test_strlcpy(); 
+	//test_strncmp();
 
 	//test_ft_putchar_fd();
 	
