@@ -299,73 +299,194 @@ void test_strncmp()
 {
 	printf("### Starting test of ft_strncmp: ###\n\n");
 
-// Test 1: Equal strings
-  printf("Test 1: Equal strings\n");
-  char *s1 = "hello";
-  char *s2 = "hello";
-  int result_ft = ft_strncmp(s1, s2, 5);
-  int result_std = strncmp(s1, s2, 5);
-  printf("s1 = |%s|\n", s1); 
-  printf("s2 = |%s|\n", s2);
-  printf("n (comparison) = %i\n\n", 5);
+	// Test 1: Equal strings
+	printf("Test 1: Equal strings\n");
+	char *s1 = "hello";
+	char *s2 = "hello";
+	int result_ft = ft_strncmp(s1, s2, 5);
+	int result_std = strncmp(s1, s2, 5);
+	printf("s1 = |%s|\n", s1); 
+	printf("s2 = |%s|\n", s2);
+	printf("n (comparison) = %i\n\n", 5);
 
-  assert(result_ft == result_std);
-  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+	assert(result_ft == result_std);
+	printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
 
-  // Test 2: Different strings (s1 < s2)
-  printf("\nTest 2: Different strings (s1 < s2)\n");
-  s1 = "apple";
-  s2 = "banana";
-  result_ft = ft_strncmp(s1, s2, 5);
-  result_std = strncmp(s1, s2, 5);
-  printf("s1 = |%s|\n", s1); 
-  printf("s2 = |%s|\n", s2);
-  printf("n (comparison) = %i\n\n", 5);
+	// Test 2: Different strings (s1 < s2)
+	printf("\nTest 2: Different strings (s1 < s2)\n");
+	s1 = "apple";
+	s2 = "banana";
+	result_ft = ft_strncmp(s1, s2, 5);
+	result_std = strncmp(s1, s2, 5);
+	printf("s1 = |%s|\n", s1); 
+	printf("s2 = |%s|\n", s2);
+	printf("n (comparison) = %i\n\n", 5);
 
-  assert(result_ft == result_std);
-  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+	assert(result_ft == result_std);
+	printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
 
-  // Test 3: Different strings (s1 > s2)
-  printf("\nTest 3: Different strings (s1 > s2)\n");
-  s1 = "world";
-  s2 = "hello";
-  result_ft = ft_strncmp(s1, s2, 5);
-  result_std = strncmp(s1, s2, 5);
-  printf("s1 = |%s|\n", s1); 
-  printf("s2 = |%s|\n", s2);
-  printf("n (comparison) = %i\n\n", 5);
+	// Test 3: Different strings (s1 > s2)
+	printf("\nTest 3: Different strings (s1 > s2)\n");
+	s1 = "world";
+	s2 = "hello";
+	result_ft = ft_strncmp(s1, s2, 5);
+	result_std = strncmp(s1, s2, 5);
+	printf("s1 = |%s|\n", s1); 
+	printf("s2 = |%s|\n", s2);
+	printf("n (comparison) = %i\n\n", 5);
 
-  assert(result_ft == result_std);
-  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+	assert(result_ft == result_std);
+	printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
 
-  // Test 4: Empty string
-  printf("\nTest 4: Empty string\n");
-  s1 = "";
-  s2 = "hello";
-  result_ft = ft_strncmp(s1, s2, 5);
-  result_std = strncmp(s1, s2, 5);
-  printf("s1 = |%s|\n", s1); 
-  printf("s2 = |%s|\n", s2);
-  printf("n (comparison) = %i\n\n", 5);
+	// Test 4: Empty string
+	printf("\nTest 4: Empty string\n");
+	s1 = "";
+	s2 = "hello";
+	result_ft = ft_strncmp(s1, s2, 5);
+	result_std = strncmp(s1, s2, 5);
+	printf("s1 = |%s|\n", s1); 
+	printf("s2 = |%s|\n", s2);
+	printf("n (comparison) = %i\n\n", 5);
 
-  assert(result_ft == result_std);
-  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+	assert(result_ft == result_std);
+	printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
 
-  // Test 6: Short comparison length
-  printf("\nTest 5: Short comparison length\n");
-  s1 = "hello world";
-  s2 = "hello";
-  result_ft = ft_strncmp(s1, s2, 3);
-  result_std = strncmp(s1, s2, 3);
-  printf("s1 = |%s|\n", s1); 
-  printf("s2 = |%s|\n", s2);
-  printf("n (comparison) = %i\n\n", 3);
+	// Test 6: Short comparison length
+	printf("\nTest 5: Short comparison length\n");
+	s1 = "hello world";
+	s2 = "hello";
+	result_ft = ft_strncmp(s1, s2, 3);
+	result_std = strncmp(s1, s2, 3);
+	printf("s1 = |%s|\n", s1); 
+	printf("s2 = |%s|\n", s2);
+	printf("n (comparison) = %i\n\n", 3);
 
-  assert(result_ft == result_std);
-  printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+	assert(result_ft == result_std);
+	printf("ft_strncmp: %d, strncmp: %d, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
 
-  printf("~~~~ ( o - o ) V ----ALL TESTS PASSED!~~~~~\n");
+	printf("~~~~ ( o - o ) V ----ALL TESTS PASSED!~~~~~\n");
+	}
+
+void test_ft_toupper() {
+	printf("==========\n");  // Separator for better readability
+
+	// Test 1: Lowercase letter
+	printf("** Test 1: Lowercase letter **\n");
+	char c = 'a';
+	char result_ft = ft_toupper(c);
+	char result_std = toupper(c);
+	//assert(result_ft == result_std);
+	printf("ft_toupper: %c, toupper: %c, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+	// Test 2: Uppercase letter (should remain unchanged)
+	printf("\n** Test 2: Uppercase letter (unchanged) **\n");
+	c = 'X';
+	result_ft = ft_toupper(c);
+	result_std = toupper(c);
+	assert(result_ft == result_std);
+	printf("ft_toupper: %c, toupper: %c, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+	// Test 3: Number
+	printf("\n** Test 3: Number (should remain unchanged) **\n");
+	c = '5';
+	result_ft = ft_toupper(c);
+	result_std = toupper(c);
+	assert(result_ft == result_std);
+	printf("ft_toupper: %c, toupper: %c, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+	// Test 4: Symbol
+	printf("\n** Test 4: Symbol (should remain unchanged) **\n");
+	c = '$';
+	result_ft = ft_toupper(c);
+	result_std = toupper(c);
+	assert(result_ft == result_std);
+	printf("ft_toupper: %c, toupper: %c, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+	// Test 5: EOF (undefined behavior, handle accordingly)
+	printf("\n** Test 5: EOF (undefined behavior) **\n");
+	c = EOF;  // This might cause undefined behavior with custom implementation
+	result_ft = ft_toupper(c);
+	result_std = toupper(c);
+	// No assertion here, as EOF behavior is implementation specific
+	printf("ft_toupper: %d (undefined behavior)\n", result_ft);
+	printf("toupper: %d (undefined behavior)\n", result_std);
+
+	// Test 6: Non-char value (undefined behavior, handle accordingly)
+	printf("\n** Test 6: Non-char value (undefined behavior) **\n");
+	int non_char_value = 123;  // This might cause undefined behavior with custom implementation
+	result_ft = ft_toupper(non_char_value);
+	result_std = toupper(c);
+	// No assertion here, as non-char value behavior is implementation specific
+	printf("ft_toupper: %d (undefined behavior)\n", result_ft);
+	printf("toupper: %d (undefined behavior)\n", result_std);
+
+
+
+
+	printf("==========\n");  // Separator for better readability
+	printf("ALL TESTS PASSED\n");
 }
+
+void test_ft_tolower() {
+	printf("==========\n");  // Separator for better readability
+
+	// Test 1: Lowercase letter
+	printf("** Test 1: Upper letter **\n");
+	char c = 'A';
+	char result_ft = ft_tolower(c);
+	char result_std = tolower(c);
+	assert(result_ft == result_std);
+	printf("ft_tolower: %c, tolower: %c, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+	// Test 2: Uppercase letter (should remain unchanged)
+	printf("\n** Test 2: Lowercase letter (unchanged) **\n");
+	c = 'x';
+	result_ft = ft_tolower(c);
+	result_std = tolower(c);
+	assert(result_ft == result_std);
+	printf("ft_tolower: %c, tolower: %c, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+	// Test 3: Number
+	printf("\n** Test 3: Number (should remain unchanged) **\n");
+	c = '5';
+	result_ft = ft_tolower(c);
+	result_std = tolower(c);
+	assert(result_ft == result_std);
+	printf("ft_tolower: %c, tolower: %c, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+	// Test 4: Symbol
+	printf("\n** Test 4: Symbol (should remain unchanged) **\n");
+	c = '$';
+	result_ft = ft_tolower(c);
+	result_std = tolower(c);
+	assert(result_ft == result_std);
+	printf("ft_tolower: %c, tolower: %c, Test Passed: %s\n", result_ft, result_std, result_ft == result_std ? "YES" : "NO");
+
+	// Test 5: EOF (undefined behavior, handle accordingly)
+	printf("\n** Test 5: EOF (undefined behavior) **\n");
+	c = EOF;  // This might cause undefined behavior with custom implementation
+	result_ft = ft_tolower(c);
+	result_std = tolower(c);
+	// No assertion here, as EOF behavior is implementation specific
+	printf("ft_tolower: %d (undefined behavior)\n", result_ft);
+	printf("tolower: %d (undefined behavior)\n", result_std);
+
+	// Test 6: Non-char value (undefined behavior, handle accordingly)
+	printf("\n** Test 6: Non-char value (undefined behavior) **\n");
+	int non_char_value = 123;  // This might cause undefined behavior with custom implementation
+	result_ft = ft_tolower(non_char_value);
+	result_std = tolower(c);
+	// No assertion here, as non-char value behavior is implementation specific
+	printf("ft_tolower: %d (undefined behavior)\n", result_ft);
+	printf("tolower: %d (undefined behavior)\n", result_std);
+
+
+
+
+	printf("==========\n");  // Separator for better readability
+	printf("ALL TESTS PASSED\n");
+}
+
 
 
 
@@ -379,6 +500,8 @@ int main(void)
 	//test_strlen();
 	//test_strlcpy(); 
 	//test_strncmp();
+	//test_ft_toupper();
+	test_ft_tolower();
 
 	//test_ft_putchar_fd();
 	

@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shiyun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 18:58:31 by shiyun            #+#    #+#             */
-/*   Updated: 2024/05/23 23:39:57 by shiyun           ###   ########.fr       */
+/*   Created: 2024/05/23 23:49:00 by shiyun            #+#    #+#             */
+/*   Updated: 2024/05/23 23:49:18 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-* desc: Converts lowercase to uppercase
-* if c == lowercase, return uppercase equivalent 
-* if c is not unsigned char OR EOF, behavior == UNDEFINED
-* @params: 
-*/
-int ft_toupper(int c)
+int ft_tolower(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= 'A' && c <= 'Z')
 	{
-		return (c - 32);
+		return (c + 32);
 	}
 	return (c); 
 }
