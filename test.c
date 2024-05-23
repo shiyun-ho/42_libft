@@ -440,7 +440,7 @@ void test_ft_tolower() {
 
 	// Test 2: Uppercase letter (should remain unchanged)
 	printf("\n** Test 2: Lowercase letter (unchanged) **\n");
-	c = 'x';
+	c = 'X';
 	result_ft = ft_tolower(c);
 	result_std = tolower(c);
 	assert(result_ft == result_std);
@@ -473,7 +473,7 @@ void test_ft_tolower() {
 
 	// Test 6: Non-char value (undefined behavior, handle accordingly)
 	printf("\n** Test 6: Non-char value (undefined behavior) **\n");
-	int non_char_value = 123;  // This might cause undefined behavior with custom implementation
+	int non_char_value = 127;  // This might cause undefined behavior with custom implementation
 	result_ft = ft_tolower(non_char_value);
 	result_std = tolower(c);
 	// No assertion here, as non-char value behavior is implementation specific

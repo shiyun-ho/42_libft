@@ -6,7 +6,7 @@
 #    By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 23:50:01 by hshi-yun          #+#    #+#              #
-#    Updated: 2024/05/23 23:35:40 by shiyun           ###   ########.fr        #
+#    Updated: 2024/05/23 23:55:08 by shiyun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CFLAGS =-Wall -Wextra -Werror
 
 SRC = ft_putchar_fd.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 	  ft_isprint.c ft_strlen.c ft_strlcpy.c ft_strncmp.c ft_toupper.c \
+	  ft_tolower.c
 
 OBJ = $(SRC:.c=.o)
 
