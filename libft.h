@@ -6,7 +6,7 @@
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:17:03 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/22 19:44:58 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/24 15:51:17 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 int ft_toupper(int c);
 int ft_tolower(int c);
-
+char *ft_strnstr(const char *big, const char *little, size_t len);
 
 
 

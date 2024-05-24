@@ -487,8 +487,67 @@ void test_ft_tolower() {
 	printf("ALL TESTS PASSED\n");
 }
 
+void test_ft_strnstr()
+{
+	printf("==========\n");  // Separator for better readability
 
+	// Test 1: Empty little string
+	printf("** Test 1: Empty little string **\n");
+	char *big = "hello world";
+	char *little = "";
+	size_t maxlen = 10;
+	char *result_ft = ft_strnstr(big, little, maxlen);
+	char *expected_result = big; // Expect to find little at the beginning
 
+	printf("ft_strnstr: %p (expected: %p)\n", result_ft, expected_result);
+	printf("Test Passed: %s\n", result_ft == expected_result ? "YES" : "NO");
+
+	// Test 2: Full match within maxlen
+	printf("\n** Test 2: Full match within maxlen **\n");
+	big = "hello world";
+	little = "world";
+	maxlen = 11;
+	result_ft = ft_strnstr(big, little, maxlen);
+	expected_result = big + strlen(big) - strlen(little); // Point to the first character of the match
+
+	printf("ft_strnstr: %p (expected: %p)\n", result_ft, expected_result);
+	printf("Test Passed: %s\n", result_ft == expected_result ? "YES" : "NO");
+
+	// Test 3: Partial match outside maxlen
+	printf("\n** Test 3: Partial match outside maxlen **\n");
+	big = "hello world";
+	little = "world";
+	maxlen = 10;
+	result_ft = ft_strnstr(big, little, maxlen);
+	expected_result = NULL; // No match found within maxlen
+
+	printf("ft_strnstr: %p (expected: %p)\n", result_ft, expected_result);
+	printf("Test Passed: %s\n", result_ft == expected_result ? "YES" : "NO");
+
+	// Test 4: No match
+	printf("\n** Test 4: No match **\n");
+	big = "hello world";
+	little = "lorem";
+	maxlen = 11;
+	result_ft = ft_strnstr(big, little, maxlen);
+	expected_result = NULL; // No match found
+
+	printf("ft_strnstr: %p (expected: %p)\n", result_ft, expected_result);
+	printf("Test Passed: %s\n", result_ft == expected_result ? "YES" : "NO");
+
+	// Test 5: Empty big string
+	printf("\n** Test 5: Empty big string **\n");
+	big = "";
+	little = "a";
+	maxlen = 1;
+	result_ft = ft_strnstr(big, little, maxlen);
+	expected_result = NULL; // No match in empty string
+
+	printf("ft_strnstr: %p (expected: %p)\n", result_ft, expected_result);
+	printf("Test Passed: %s\n", result_ft == expected_result ? "YES" : "NO");
+
+	printf("==========\n");  // Separator for better readability
+}
 
 int main(void)
 {
@@ -501,7 +560,8 @@ int main(void)
 	//test_strlcpy(); 
 	//test_strncmp();
 	//test_ft_toupper();
-	test_ft_tolower();
+	//test_ft_tolower();
+	//test_ft_strnstr(); 
 
 	//test_ft_putchar_fd();
 	
