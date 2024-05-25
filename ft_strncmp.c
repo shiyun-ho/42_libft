@@ -6,7 +6,7 @@
 /*   By: shiyun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 18:15:19 by shiyun            #+#    #+#             */
-/*   Updated: 2024/05/22 18:44:35 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/24 18:07:48 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,19 @@
 
 #include <stddef.h>
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+// TODO: Fix this!!!
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	int	result;
+	size_t	result;
 
 	i = 0;
 	result = 0;
-	while (s1[i] == s2[i] && i < n - 1)
+	while (s1[i] == s2[i] && i < n && s1[i] && s2[i])
 	{
-		result = (size_t)s1[i] - (size_t)s2[i];
+		result = s1[i] - s2[i];
 		i++;
 	}
 	result = (size_t)s1[i] - (size_t)s2[i];
-	return (result);
+	return ((size_t) result);
 }

@@ -6,15 +6,15 @@
 /*   By: shiyun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 23:49:00 by shiyun            #+#    #+#             */
-/*   Updated: 2024/05/23 23:49:18 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/24 18:05:49 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{
 		return (c + 32);
 	}
-	return (c); 
+	return (c);
 }

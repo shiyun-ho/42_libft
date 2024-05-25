@@ -6,7 +6,7 @@
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:51:14 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/22 18:11:22 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/24 18:13:50 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	i = 0;
 	return_len = ft_strlen(src);
+	if (size == 0)
+		return (return_len);
 	while (i < size - 1 && src[i] != '\0')
 	{
 		dst[i] = src[i];

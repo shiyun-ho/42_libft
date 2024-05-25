@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shiyun <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 23:58:38 by shiyun            #+#    #+#             */
-/*   Updated: 2024/05/24 15:11:08 by shiyun           ###   ########.fr       */
+/*   Created: 2024/05/24 17:22:43 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/05/24 18:07:19 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@
 *			little (cannot be found in BIG) -> return NULL
 *			OTHERWISE -> pointer to first char of first occurrence of little
 */
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i; 
+	size_t	i;
 	size_t	j;
 
 	i = 0;
 	j = 0;
 	if (little[0] == '\0')
-	{	
-		return (char *)big;
+	{
+		return ((char *)big);
 	}
 	while (i < len && big[i] != '\0')
 	{
@@ -39,7 +39,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 				j++;
 			if (little[j] == '\0')
 				return ((char *)big + i);
-		}	
+		}
 		i++;
 	}
 	return (NULL);

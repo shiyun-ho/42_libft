@@ -6,7 +6,7 @@
 /*   By: shiyun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 18:58:31 by shiyun            #+#    #+#             */
-/*   Updated: 2024/05/23 23:39:57 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/24 18:05:33 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 * if c is not unsigned char OR EOF, behavior == UNDEFINED
 * @params: 
 */
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{
 		return (c - 32);
 	}
-	return (c); 
+	return (c);
 }
