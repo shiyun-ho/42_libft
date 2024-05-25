@@ -2,6 +2,7 @@
 #include "libft.h"
 #include <assert.h>
 #include <ctype.h>
+#include <strings.h>
 #include <string.h>
 
 void test_ft_isalpha()
@@ -554,7 +555,7 @@ int main(void)
 	//test_ft_isalpha();
 	//test_is_digit();
 	//test_isalnum();
-	//test_isascii(); 
+	test_isascii(); 
 	//test_isprint();
 	//test_strlen();
 	//test_strlcpy(); 

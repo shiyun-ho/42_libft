@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+         #
+#    By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 23:50:01 by hshi-yun          #+#    #+#              #
-#    Updated: 2024/05/24 15:51:58 by shiyun           ###   ########.fr        #
+#    Updated: 2024/05/25 18:06:50 by hshi-yun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS =-Wall -Wextra -Werror
 
 SRC = ft_putchar_fd.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 	  ft_isprint.c ft_strlen.c ft_strlcpy.c ft_strncmp.c ft_toupper.c \
-	  ft_tolower.c ft_strnstr.c
+	  ft_tolower.c ft_strnstr.c ft_atoi.c ft_memset.c ft_bzero.c
 
 OBJ = $(SRC:.c=.o)
 
