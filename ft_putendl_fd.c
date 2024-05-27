@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 12:13:55 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/27 14:14:43 by shiyun           ###   ########.fr       */
+/*   Created: 2024/05/27 14:25:48 by shiyun            #+#    #+#             */
+/*   Updated: 2024/05/27 14:52:14 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 /*
-* @param: c - char to output
+* @param: s - string to output
 * @param: fd - file descriptor
-* description: Outputs character to given file descriptor
+* description: Outputs string s to given file descriptor followed by new line
 */
-
-void	ft_putchar_fd(char c, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
+    // size_t i;
+    // size_t strlen;
+    
+    // i = 0;
+    // strlen = ft_strlen(s);
+    if (s || fd > 0)
+    {
+        ft_putstr_fd(s,fd);
+        write(1, "\n", 1);
+    }
 }
