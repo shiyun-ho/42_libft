@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
+/*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 11:54:15 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/22 18:07:25 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/28 18:34:12 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(unsigned char c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{

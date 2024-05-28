@@ -6,7 +6,7 @@
 /*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:17:03 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/27 12:17:48 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/28 18:31:44 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stddef.h>
 
-int	ft_isalpha(unsigned char c);
+int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
 int ft_isascii(int c);
