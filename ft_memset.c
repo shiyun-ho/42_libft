@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 16:12:42 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/25 17:42:34 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/05/28 21:23:46 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 /*
-* @param: 
 * @desc: //Set bytes in memory// 
 * 		 Shall copy c (converted to an unsigned char)
 *		 into each of the first n bytes of the object pointed to by s. 
@@ -23,16 +22,16 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t			i;
-	unsigned char	*str;
+	unsigned char	*ptr;
 
 	i = 0;
-	str = (unsigned char*)s;
+	ptr = (unsigned char*)s;
 	while(i < n)
 	{
-		str[i] = (unsigned char) c;
+		ptr[i] = (unsigned char) c;
 		i++;
 	}
-	return s;
+	return (s);
 }
 
 // #include <stdio.h>

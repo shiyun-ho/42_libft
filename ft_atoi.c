@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 18:20:33 by shiyun            #+#    #+#             */
-/*   Updated: 2024/05/25 18:14:11 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:23:49 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,21 @@ int ft_atoi(const char *str)
 	sign = 1;
 	i = 0; 
 	num = 0;
-	while (str[i] != '\0')
+	while (str[i] == ' ' || (str[i] >= '\a' && str[i] <= '\r'))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if(str[i] == ' ' || (str[i] >= '\n' && str[i] == '\r'))
-			i++;
-		else if (ft_isalpha(str[i]))
-			return (num);
-		else if (str[i] == '+' || str[i] == '-')
-		{
-			if (str[i] == '-')
-				sign *= -1;
-			i++;
-		}
-		else if(ft_isdigit(str[i]))
-		{
-			num *= 10; 
-			num += str[i] - '0'; 
-			i++;
-		}
-		else
-			i++;
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]) && str[i] != '\0')
+	{
+		num = num * 10 + (str[i] - '0');
+		i++; 
 	}
 	return (num * sign);
 }
-
 // #include <stdio.h>
 // int main() {
 //   // Valid cases

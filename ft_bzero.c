@@ -6,7 +6,7 @@
 /*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 17:05:00 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/27 20:47:56 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/28 21:28:49 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 void ft_bzero(void *s, size_t n)
 {
     size_t          i;
-    unsigned char   *str;
+    char   *ptr;
 
     i = 0;
-    str = (unsigned char*)s;
-    if (n == 0)
-        return;
+    ptr = (char*)s;
+    // if (n == 0)
+    //     return;
     while (i < n)
     {
-        str[i] = 0;
+        ptr[i] = 0;
         i++;
     }
 }
