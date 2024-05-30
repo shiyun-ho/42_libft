@@ -6,7 +6,7 @@
 /*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 16:12:42 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/28 21:23:46 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:03:54 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
 // #include <stdio.h>
 // #include <string.h>
 // int main()

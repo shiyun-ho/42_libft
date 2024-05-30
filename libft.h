@@ -6,7 +6,7 @@
 /*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:17:03 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/05/28 18:31:44 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/05/30 00:41:59 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void ft_bzero(void *s, size_t n);
 void *ft_memcpy(void *dest, const void *src, size_t n);
 void *ft_memmove(void *dest, const void *src, size_t n);
 size_t ft_strlcpy(char *dst, const char *src, size_t size);
-
+size_t  ft_strlcat(char *dst, const char *src, size_t size);
 int ft_toupper(int c);
 int ft_tolower(int c);
 
