@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 18:15:19 by shiyun            #+#    #+#             */
-/*   Updated: 2024/05/28 19:05:43 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/06/01 22:08:26 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 #include <stddef.h>
 
-// TODO: Does not stop at '\0'
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
