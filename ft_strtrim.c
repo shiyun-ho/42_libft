@@ -6,7 +6,7 @@
 /*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:36:40 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/06/02 23:35:45 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/06/03 23:08:37 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,44 +19,54 @@
 * @return: trimmed str || allocation fails > NULL
 */
 
+size_t	find_ptr_position(char const *s1, char const *set, size_t s1_len, int direction)
+{
+	size_t	i;
+	size_t	result;
+	
+	i = 0;
+	while (i < s1_len)
+	{
+		if (direction == 1)
+		{
+			if (ft_strrchr(set, s1[i]) == NULL)
+				break;
+			i++;
+		}
+		else if (direction == 0)
+		{
+			if (ft_strrchr(set, s1[s1_len - 1 - i]) == NULL)
+				break;
+			i++;
+		}
+	}
+	if (direction == 1)
+		result = i;
+	if (direction == 0)
+		result = s1_len - i;
+	return (result);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
+	size_t	s1_len;
+	size_t	left_ptr;
+	size_t	right_ptr;
 	
 	if (s1 == NULL)
 		return (NULL);
 	if (set == NULL)
 		return (ft_strdup(s1));
-	int left_ptr = 0;
-	int right_ptr = ft_strlen(s1) - 1; //points to end index
-	//First find where left_ptr will end in terms of last occurrence of set in s1
-	size_t i = 0;
-	while (i < ft_strlen(s1))
-	{
-		while (ft_strrchr(set, s1[i]) == NULL) 
-			break;
-		i++;
-	}
-	right_ptr = i;
-	i = right_ptr;
-	while (i > 0)
-	{
-		while (ft_strrchr(set, s1[i]) == NULL) 
-			break;
-		i--;
-	}
-	left_ptr = i;
-	if (right_ptr >= left_ptr)
+	s1_len = ft_strlen(s1);
+	left_ptr = find_ptr_position(s1, set, s1_len, 1);
+	right_ptr = find_ptr_position(s1, set, s1_len, 0);
+	if (left_ptr >= right_ptr)
 		return (ft_strdup(""));
-	//Allocate memory using malloc
-	str = malloc(sizeof(char));
-	//if mem allocation fails, set return null
+	str = malloc((right_ptr - left_ptr + 1) * sizeof(char));
 	if (str == NULL)
 		return NULL;
-	//else, copy from s1[0] + left_ptr position, for r - l _+ 1 position
-	str = (char*) ft_strlcpy(str, s1 + left_ptr, right_ptr - left_ptr + 1);
-	//Return copy of s1 without chars in set at beginning and at the end of str
+	if(str)
+		ft_strlcpy(str, s1 + left_ptr, right_ptr - left_ptr + 1);
 	return (str);
 }
-
