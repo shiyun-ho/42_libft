@@ -6,7 +6,7 @@
 /*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 19:46:09 by shiyun            #+#    #+#             */
-/*   Updated: 2024/06/01 17:53:31 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/06/08 15:14:12 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 	int		len;
+	char	character;
 	char	*result_ptr;
 
 	i = 0;
 	len = ft_strlen(s);
+	character = (char) c;
 	result_ptr = NULL;
 	while (i <= len)
 	{
-		if (s[i] == c)
+		if (s[i] == character)
 		{
 			result_ptr = (char *)&s[i];
 		}
