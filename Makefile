@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+         #
+#    By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 23:50:01 by hshi-yun          #+#    #+#              #
-#    Updated: 2024/06/09 17:13:23 by hshi-yun         ###   ########.fr        #
+#    Updated: 2024/06/09 18:42:57 by hshi-yun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 
 
-CC =gcc
+CC =cc
 CFLAGS =-Wall -Wextra -Werror
 
 SRC = ft_putchar_fd.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \

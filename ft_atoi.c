@@ -6,11 +6,38 @@
 /*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 18:20:33 by shiyun            #+#    #+#             */
-/*   Updated: 2024/06/09 17:21:40 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/06/09 18:22:54 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// int ft_atoi(const char *nptr)
+// {
+// 	int result;
+// 	int sign;
+// 	int i;
+
+// 	result = 0;
+// 	sign = 1;
+// 	i = 0;
+// 	while ((nptr[i] > 8 && nptr[i] < 14) || nptr[i] == 32)
+// 		i++;
+// 	if (nptr[i] == '-' || nptr[i] == '+')
+// 	{
+// 		if (nptr[i] == '-')
+// 			sign *= -1;
+// 		i++;
+// 	}
+// 	while (nptr[i] >= '0' && nptr[i] <= '9')
+// 	{
+// 		result = (result * 10) + (nptr[i] - '0');
+// 		i++;
+// 	}
+// 	if (result <= 2147483647)
+// 		return (sign * result);
+// 	return (0);
+// }
 
 int	ft_atoi(const char *str)
 {

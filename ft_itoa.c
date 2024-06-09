@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 23:36:55 by shiyun            #+#    #+#             */
-/*   Updated: 2024/06/09 09:57:29 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/06/09 18:41:19 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ static int	calculate_strlen(int n)
 	return (str_len);
 }
 
-static long long	calculate_value(long long n)
+static long	calculate_value(long n)
 {
-	long long	value;
+	long	value;
 
-	value = (long long)n;
+	value = (long)n;
 	if (n < 0)
 		value = n * -1;
 	return (value);
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 {
 	char		*str;
 	int			str_len;
-	long long	value;
+	long		value;
 	int			i;
 
 	str_len = calculate_strlen(n);
