@@ -6,7 +6,7 @@
 /*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:25:48 by shiyun            #+#    #+#             */
-/*   Updated: 2024/05/27 19:43:23 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/06/09 10:11:06 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 */
 void	ft_putendl_fd(char *s, int fd)
 {
-    if (s != NULL)
-    {   
-        ft_putstr_fd(s,fd);
-        ft_putchar_fd('\n', fd);
-    }
+	if (s != NULL)
+	{
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
+	}
 }

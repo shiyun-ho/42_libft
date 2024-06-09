@@ -6,7 +6,7 @@
 /*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 11:52:58 by shiyun            #+#    #+#             */
-/*   Updated: 2024/06/08 14:22:38 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/06/09 09:48:37 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@
 */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    unsigned int    i;
-    
-    i = 0;
-    if (s != NULL || f != NULL)
-    {
-        while (*s)
-        {
-            (*f)(i, s);
-            i++;
-            s++;
-        }
-    }
+	unsigned int	i;
+
+	i = 0;
+	if (s != NULL || f != NULL)
+	{
+		while (*s)
+		{
+			(*f)(i, s);
+			i++;
+			s++;
+		}
+	}
 }

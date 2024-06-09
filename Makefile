@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+         #
+#    By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 23:50:01 by hshi-yun          #+#    #+#              #
-#    Updated: 2024/06/08 14:27:19 by hshi-yun         ###   ########.fr        #
+#    Updated: 2024/06/09 10:26:41 by shiyun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,6 @@ OBJ = $(SRC:.c=.o)
 SRC_BONUS = 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
-
-
 all: $(NAME) 
 
 
@@ -42,18 +40,15 @@ $(NAME) : $(OBJ)
 	ranlib $(NAME)
 	@echo ">>> Processing and indexing completed."
  
+%.o : %.c
+	@echo ">>> Compiling .c files to .o files"
+	$(CC) $(CFLAGS) -c -o $@ $^
+
 bonus : $(OBJ_BONUS)
 	@echo ">>> Starting background processing and indexing of files into bonus lib"
 	ar rcs $(NAME) $(OBJ_BONUS)
 	ranlib $(NAME)
 	@echo ">>> Processing and indexing completed."
- 
-
-
-%.o : %.c
-	@echo ">>> Compiling .c files to .o files"
-	$(CC) $(CFLAGS) -c -o $@ $^
-
 
 
 norminette: 
