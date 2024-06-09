@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split_try.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 23:09:29 by shiyun            #+#    #+#             */
-/*   Updated: 2024/06/08 21:10:04 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/06/09 07:36:50 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static int   calculate_word_count(char const *s, char c)
     int     word_count;
 
     word_count = 1;
-    while (s)
+    while (*s)
     {
-        if (s == c)
+        if (*s == c)
         {
             word_count++;
         }
@@ -42,7 +42,7 @@ int     find_start(char *current_ptr, char *start_ptr)
         start = 0;
     else 
     {
-        start = (int) current_ptr - (int) start_ptr;
+        start = current_ptr - start_ptr;
         start_ptr = current_ptr;
     }
     return (start);
@@ -64,14 +64,14 @@ static char     **add_to_array(char const *s, char c, char **arr, size_t word_co
     int     start;
     char    *start_ptr;
 
-    start_ptr = s;
+    start_ptr = (char*) s;
     while (*s && k < word_count)
     {
-        if (s != c)
+        if (*s != c)
             length++; //calculate word length
-        else if (s == c)
+        else if (*s == c)
         {
-            arr[k] = ft_substr(s, find_start(s, start_ptr), length); //need to find start
+            arr[k] = ft_substr(s, find_start((char*)s, start_ptr), length); //need to find start
             if (!arr[k]) //if cannot allocate memory >> free every element before this 
             {
                 free_array(k, arr);
@@ -104,17 +104,26 @@ char	**ft_split(char const *s, char c)
 }
 
 
-// #include <stdio.h>
-// int main()
-// {
-//     char s[] = "Hello world, how are you?";
-//     char c = ' ';
-//     char **arr_substr = ft_split(s, c);
+#include <stdio.h>
 
-//     int i = 0;
-//     while (arr_substr[i])
-//     {
-//         printf("%s\n", arr_substr[i]);
-//         i++;
-//     }
-// }
+int main() {
+    char s[] = "Hello world, how are you?";
+    char c = ' ';
+    char **arr_substr = ft_split(s, c);
+
+    if (arr_substr == NULL) {
+        printf("Error: Unable to allocate memory for split words.\n");
+        return 1; // Indicate an error
+    }
+
+    int i = 0;
+    while (arr_substr[i]) {
+        printf("%s\n", arr_substr[i]);
+        i++;
+    }
+
+    // Free the allocated memory for the array and individual strings
+    free_array(i, arr_substr); // Assuming `free_array` is implemented correctly
+
+    return 0; // Indicate successful execution
+}

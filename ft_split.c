@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 23:09:29 by shiyun            #+#    #+#             */
-/*   Updated: 2024/06/08 21:57:03 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/06/09 09:11:55 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,29 @@ static int   calculate_word_count(char const *s, char c)
     int      i;
     int      word_count;
 
+    word_count = 0;
     if (s == NULL)
         word_count = 0;
+    i = 0;
     while (s[i] != '\0')
     {
         while (s[i] == c)
             i++;
         if (s[i] != '\0')
             word_count++;
-        while (s[i] != c && s[i] != '\0')
+        while (s[i] != c && s[i] != '\0') 
             i++;
     }
     return (word_count);
+}
+static void     free_array(int i, char **arr)
+{
+    while (i > 0)
+    {
+        i--;
+        free(arr[i]);
+    }
+    free(arr);
 }
 static char     **add_to_array(char const *s, char c, char **arr)
 {
@@ -51,11 +62,14 @@ static char     **add_to_array(char const *s, char c, char **arr)
 			s++;
 		if (*s)
 		{
-			if (!ft_strchr(s, c))
+			if (ft_strchr(s, c) == NULL)
 				word_len = ft_strlen(s);
 			else
 				word_len = ft_strchr(s, c) - s;
-			arr[i++] = ft_substr(s, 0, word_len);
+			arr[i] = ft_substr(s, 0, word_len);
+            if (!arr[i])
+                free_array(i, arr);
+            i++;
 			s += word_len;
 		}
 	}
@@ -69,8 +83,32 @@ char	**ft_split(char const *s, char c)
 
     word_count = calculate_word_count(s, c);
     arr = (char **)malloc((word_count + 1) * sizeof(char*));
-    if (!s || !c || !arr)
+    if (!s || !arr)
         return (NULL);
     arr = add_to_array(s, c, arr);
     return (arr);
 }
+// #include <stdio.h>
+
+// int main() {
+//     char s[] = "      split       this for   me  !       ";
+//     char c = ' ';
+//     char **arr_substr = ft_split(s, c);
+
+//     if (arr_substr == NULL) {
+//         printf("Error: Unable to allocate memory for split words.\n");
+//         return 1; // Indicate an error
+//     }
+
+//     int i = 0;
+//     while (arr_substr[i]) {
+//         printf("%s\n", arr_substr[i]);
+//         i++;
+//     }
+
+//     // // Free the allocated memory for the array and individual strings
+//     // free_array(i, arr_substr); // Assuming `free_array` is implemented correctly
+
+//     return 0; // Indicate successful execution
+// }
+
