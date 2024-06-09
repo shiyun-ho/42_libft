@@ -6,7 +6,7 @@
 #    By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 23:50:01 by hshi-yun          #+#    #+#              #
-#    Updated: 2024/06/09 10:26:41 by shiyun           ###   ########.fr        #
+#    Updated: 2024/06/09 17:13:23 by hshi-yun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,6 @@ SRC = ft_putchar_fd.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 
 OBJ = $(SRC:.c=.o)
 
-SRC_BONUS = 
-OBJ_BONUS = $(SRC_BONUS:.c=.o)
-
 all: $(NAME) 
 
 
@@ -43,13 +40,6 @@ $(NAME) : $(OBJ)
 %.o : %.c
 	@echo ">>> Compiling .c files to .o files"
 	$(CC) $(CFLAGS) -c -o $@ $^
-
-bonus : $(OBJ_BONUS)
-	@echo ">>> Starting background processing and indexing of files into bonus lib"
-	ar rcs $(NAME) $(OBJ_BONUS)
-	ranlib $(NAME)
-	@echo ">>> Processing and indexing completed."
-
 
 norminette: 
 	@echo ">>> Checking norminette for all files"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 18:20:33 by shiyun            #+#    #+#             */
-/*   Updated: 2024/06/09 09:59:23 by shiyun           ###   ########.fr       */
+/*   Updated: 2024/06/09 17:21:40 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	ft_atoi(const char *str)
 {
-	long long	num;
+	int			num;
 	int			sign;
 	int			i;
 
 	sign = 1;
 	i = 0;
 	num = 0;
-	while (str[i] == ' ' || (str[i] >= '\a' && str[i] <= '\r'))
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -29,10 +29,12 @@ int	ft_atoi(const char *str)
 			sign *= -1;
 		i++;
 	}
-	while (ft_isdigit(str[i]) && str[i] != '\0')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		num = num * 10 + (str[i] - '0');
+		num = (num * 10) + (str[i] - '0');
 		i++;
 	}
-	return (num * sign);
+	if (num <= 2147483647)
+		return (num * sign);
+	return (0);
 }
