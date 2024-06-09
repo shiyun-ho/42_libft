@@ -6,7 +6,7 @@
 /*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 23:36:55 by shiyun            #+#    #+#             */
-/*   Updated: 2024/06/09 18:41:19 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/06/09 19:25:27 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static int	calculate_strlen(int n)
 
 static long	calculate_value(long n)
 {
-	long	value;
+	long int	value;
 
-	value = (long)n;
+	value = (long int)n;
 	if (n < 0)
 		value = n * -1;
 	return (value);
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 {
 	char		*str;
 	int			str_len;
-	long		value;
+	long int	value;
 	int			i;
 
 	str_len = calculate_strlen(n);
