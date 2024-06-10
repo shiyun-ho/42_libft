@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shiyun <shiyun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 23:09:29 by shiyun            #+#    #+#             */
-/*   Updated: 2024/06/09 21:49:45 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:41:04 by shiyun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	calculate_word_count(char const *s, char c)
 
 	word_count = 0;
 	if (s == NULL)
-		word_count = 0;
+		return (0);
 	i = 0;
 	while (s[i] != '\0')
 	{
@@ -60,9 +60,11 @@ static char	**add_to_array(char const *s, char c, char **arr)
 			else
 				word_len = ft_strchr(s, c) - s;
 			arr[i] = ft_substr(s, 0, word_len);
-			if (!arr[i])
+			if (!arr[i++])
+			{
 				free_array(i, arr);
-			i++;
+				return (NULL);
+			}
 			s += word_len;
 		}
 	}
@@ -75,10 +77,13 @@ char	**ft_split(char const *s, char c)
 	int		word_count;
 	char	**arr;
 
+	if (!s)
+		return (NULL);
 	word_count = calculate_word_count(s, c);
 	arr = (char **)malloc((word_count + 1) * sizeof(char *));
-	if (!s || !arr)
+	if (!arr)
 		return (NULL);
-	arr = add_to_array(s, c, arr);
+	if (!add_to_array(s, c, arr))
+		return (NULL);
 	return (arr);
 }

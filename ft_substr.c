@@ -6,7 +6,7 @@
 /*   By: hshi-yun <hshi-yun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 14:23:07 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/06/09 21:12:07 by hshi-yun         ###   ########.fr       */
+/*   Updated: 2024/06/10 18:38:52 by jngew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub_str;
+	size_t	str_len;
 
+	str_len = ft_strlen(s);
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
-		len = 0;
-	if (start >= 4294967295)
+	if (start >= str_len)
 		return (ft_strdup(""));
-	else if (len > (ft_strlen(s) - start))
-		len = ft_strlen(s) - start;
-	sub_str = ft_calloc((len + 1) * (sizeof(char)), sizeof(char));
+	else if (len > (str_len - start))
+		len = str_len - start;
+	sub_str = ft_calloc(len + 1, sizeof(char));
 	if (!sub_str)
 		return (NULL);
 	ft_strlcpy(sub_str, s + start, len + 1);
